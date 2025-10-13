@@ -1,0 +1,65 @@
+---
+//Hero.astro
+
+//* IMPORTS
+import { Search } from "lucide-react";
+import Navbar from './Navbar.astro';
+import LogoCarousel from './LogoCarousel.astro';
+---
+
+<section class="relative w-full rounded-2xl overflow-hidden bg-black text-white border border-white">
+    <!-- Imagen / Fondo -->
+    <div
+        class="absolute inset-0 bg-[url('./assets/backgrounds/B1.svg')] bg-cover bg-center brightness-85 blur-sm"
+    ></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-black/40 to-black/60"></div>
+
+    <!-- Contenido -->
+    <div class="relative z-10 px-8 md:px-16 py-10 md:py-20 flex flex-col items-center w-full">
+        <!-- Navbar como componente externo -->
+        <Navbar />
+
+        <!-- Sección principal con texto e imagen -->
+        <div class="flex flex-col md:flex-row items-center justify-between w-full max-w-8xl text-left gap-12">
+            <!-- Contenedor de texto, línea y búsqueda -->
+            <div class="flex-1 flex flex-col items-start">
+                <!-- Texto principal -->
+                <h1 class="text-5xl md:text-9xl font-extrabold leading-tight">
+                    APRENDE MÁS,<br />
+                    <span class="text-transparent stroke-white font-extrabold italic outline-text">
+                        MÁS RÁPIDO
+                    </span>
+                </h1>
+
+                <!-- Líneas decorativas -->
+                <div class="w-2/3 mt-6 border-t-4 border-white"></div>
+                <div class="w-2/4 mt-3 border-t-4 border-white"></div>
+                <div class="w-2/5 mt-3 border-t-4 border-white"></div>
+
+                <!-- Barra de búsqueda -->
+                <div class="mt-10 w-full max-w-md relative">
+                    <input
+                        type="text"
+                        placeholder="Buscar"
+                        class="w-full rounded-lg pl-4 pr-12 py-3 bg-white/20 border border-white/40 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    />
+                    <button class="absolute right-3 top-1/2 -translate-y-1/2">
+                        <Search className="w-5 h-5 text-white" />
+                    </button>
+                </div>
+            </div>
+
+            <!-- Contenedor del logo -->
+            <div class="flex justify-center items-center">
+                <img
+                    src="./assets/logos/L0.svg"
+                    alt="Logo Hero"
+                    class="w-100 md:w-80 lg:w-100"
+                />
+            </div>
+        </div>
+    </div>
+
+    <!-- Carrusel de logos como componente externo -->
+    <LogoCarousel />
+</section>

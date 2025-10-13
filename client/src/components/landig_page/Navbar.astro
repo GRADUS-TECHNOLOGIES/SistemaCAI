@@ -1,0 +1,127 @@
+---
+//Navbar.astro
+
+//* IMPORTS
+import { UserRound, ChevronDown, SquareChevronRight } from "lucide-react";
+---
+
+<nav class="relative flex items-center justify-between w-full max-w-6xl mb-8 md:mb-16">
+    <!-- Botón menú móvil -->
+    <div class="md:hidden">
+        <button
+            id="mobile-menu-button"
+            class="p-2 rounded-lg hover:bg-white/10 transition"
+        >
+            <SquareChevronRight
+                className="w-6 h-6 text-white transition-transform duration-300"
+                id="menu-icon"
+            />
+        </button>
+    </div>
+
+    <!-- Enlaces centrados (desktop) -->
+    <div class="hidden md:flex flex-1 justify-center">
+        <div class="flex items-center gap-8 lg:gap-10 text-md font-medium">
+            <a href="#" class="hover:underline transition-colors">Inicio</a>
+            <a href="#" class="hover:underline transition-colors">Nosotros</a>
+            <div class="relative group">
+                <button class="flex items-center gap-1 hover:underline transition-colors">
+                    CAI
+                    <ChevronDown
+                        className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180"
+                    />
+                </button>
+                <div
+                    class="absolute hidden group-hover:block bg-white text-black rounded-lg p-2 shadow-lg w-50 z-50"
+                >
+                    <a href="#" class="block px-3 py-1 hover:bg-gray-100 rounded transition-colors">Cursos</a>
+                    <a href="#" class="block px-3 py-1 hover:bg-gray-100 rounded transition-colors">Laboratorios</a>
+                </div>
+            </div>
+            <a href="#" class="hover:underline transition-colors">Contacto</a>
+        </div>
+    </div>
+
+    <!-- Icono usuario -->
+    <div class="ml-auto md:ml-0">
+        <button class="p-2 rounded-full border border-white/50 hover:bg-white/10 transition">
+            <UserRound className="w-5 h-5 md:w-6 md:h-6 text-white" />
+        </button>
+    </div>
+
+    <!-- Menú móvil -->
+    <div
+        id="mobile-menu"
+        class="absolute top-full left-0 w-full bg-black/95 backdrop-blur-sm hidden z-50 py-4 px-6 shadow-lg"
+    >
+        <div class="flex flex-col space-y-4 text-base font-medium">
+            <a href="#" class="py-2 hover:text-gray-300 transition-colors border-b border-white/10">Inicio</a>
+            <a href="#" class="py-2 hover:text-gray-300 transition-colors border-b border-white/10">Nosotros</a>
+
+            <!-- Dropdown móvil -->
+            <div class="border-b border-white/10">
+                <button
+                    id="mobile-dropdown-button"
+                    class="flex items-center justify-between w-full py-2 hover:text-gray-300 transition-colors"
+                >
+                    <span>CAI</span>
+                    <ChevronDown
+                        className="w-4 h-4 transition-transform duration-200"
+                        id="dropdown-icon"
+                    />
+                </button>
+                <div id="mobile-dropdown" class="hidden pl-4 space-y-2 mt-2">
+                    <a href="#" class="block py-1 hover:text-gray-300 transition-colors">Cursos</a>
+                    <a href="#" class="block py-1 hover:text-gray-300 transition-colors">Laboratorios</a>
+                </div>
+            </div>
+
+            <a href="#" class="py-2 hover:text-gray-300 transition-colors border-b border-white/10">Contacto</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Script activo en cliente -->
+<script is:inline>
+    const mobileMenuButton = document.getElementById("mobile-menu-button");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const menuIcon = document.getElementById("menu-icon");
+    const mobileDropdownButton = document.getElementById("mobile-dropdown-button");
+    const mobileDropdown = document.getElementById("mobile-dropdown");
+    const dropdownIcon = document.getElementById("dropdown-icon");
+
+    if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener("click", () => {
+            const isHidden = mobileMenu.classList.contains("hidden");
+            mobileMenu.classList.toggle("hidden", !isHidden);
+            menuIcon.classList.toggle("rotate-90", isHidden);
+        });
+    }
+
+    if (mobileDropdownButton && mobileDropdown) {
+        mobileDropdownButton.addEventListener("click", () => {
+            const isHidden = mobileDropdown.classList.contains("hidden");
+            mobileDropdown.classList.toggle("hidden", !isHidden);
+            dropdownIcon.classList.toggle("rotate-180", isHidden);
+        });
+    }
+
+    // Cierra el menú al hacer clic fuera
+    document.addEventListener("click", (event) => {
+        if (
+            mobileMenu &&
+            mobileMenuButton &&
+            !mobileMenu.contains(event.target) &&
+            !mobileMenuButton.contains(event.target)
+        ) {
+            mobileMenu.classList.add("hidden");
+            menuIcon.classList.remove("rotate-90");
+        }
+    });
+</script>
+
+<style>
+    #mobile-menu {
+        transition: all 0.3s ease-in-out;
+    }
+</style>

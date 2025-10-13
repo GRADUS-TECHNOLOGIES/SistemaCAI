@@ -1,0 +1,29 @@
+---
+// LogoCarousel.astro
+
+//* ARRAY PARA LOS LOGOS
+const logos = [
+    { src: "./assets/logos/L1.svg", alt: "Logo Anahuac" },
+    { src: "./assets/logos/L2.svg", alt: "Logo UNAM" },
+    { src: "./assets/logos/L3.svg", alt: "Logo ITESM" },
+    { src: "./assets/logos/L4.svg", alt: "Logo UAH" },
+    { src: "./assets/logos/L5.svg", alt: "Logo IPN" },
+];
+---
+
+<div class="relative z-10 bg-white py-4 md:py-6">
+    <div
+        class="flex justify-center items-center gap-4 sm:gap-6 md:gap-8 lg:gap-12 flex-wrap px-4"
+    >
+        {
+            logos.map((logo) => (
+                <img
+                    src={logo.src}
+                    alt={logo.alt}
+                    class="w-16 sm:w-20 md:w-24 lg:w-28 max-h-20 transition-transform hover:scale-105 duration-300 flex-shrink-0"
+                    loading="lazy"
+                />
+            ))
+        }
+    </div>
+</div>

@@ -1,0 +1,62 @@
+---
+const roles = [
+    {
+        title: "Alumno",
+        description: "De institución pública o privada.",
+        img: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b",
+    },
+    {
+        title: "Profesor",
+        description: "De institución pública o privada.",
+        img: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixid=teacher",
+    },
+    {
+        title: "Universidad",
+        description: "Pública o privada.",
+        img: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixid=university",
+    },
+    {
+        title: "Externo",
+        description: "Alguien que solo quiere aprender.",
+        img: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixid=thinker",
+    },
+];
+---
+
+<section class="w-full bg-[#ededed] p-8 rounded-2xl shadow-sm mt-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        <!-- Columna izquierda -->
+        <div>
+            <h2 class="text-7xl font-bold mb-8">Elige tu Rol</h2>
+            <p class="text-4xl mb-8">
+                Sé parte de la gran comunidad de <span
+                    class="text-[#4115df] font-semibold">Instructiva</span
+                > y empieza a aprender, enseñar o ganar competencias educativas hoy.
+            </p>
+            <button
+                class="flex items-center gap-2 bg-[#4115df] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#010089] transition-all"
+            >
+                Iniciar sesión →
+            </button>
+        </div>
+
+        <!-- Columna derecha -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {
+                roles.map((r) => (
+                    <div class="bg-white rounded-xl shadow-md hover:shadow-lg transition-all overflow-hidden cursor-pointer">
+                        <img
+                            src={r.img}
+                            alt={r.title}
+                            class="w-full h-40 object-cover"
+                        />
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">{r.title}</h3>
+                            <p class="text-sm">{r.description}</p>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>

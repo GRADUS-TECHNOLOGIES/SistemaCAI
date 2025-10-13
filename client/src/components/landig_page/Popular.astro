@@ -1,0 +1,74 @@
+---
+//* IMPORTS
+import { ChevronRight, ArrowRight } from "lucide-react";
+---
+
+<section class="w-full mt-12 bg-white rounded-2xl p-6 sm:p-8">
+    <!-- Header -->
+    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">
+            Los más populares
+        </h2>
+        
+        <!-- Botones de navegación -->
+        <div class="flex items-center gap-4 w-full sm:w-auto">
+            <button class="flex items-center gap-1 text-[#4115df] font-medium hover:text-violet-700 transition-colors text-sm sm:text-base">
+                Mostrar más
+                <ChevronRight className="w-4 h-4" />
+            </button>
+            <button class="flex items-center gap-1 text-[#4115df] font-medium hover:text-violet-700 transition-colors text-sm sm:text-base">
+                Ver todo
+                <ArrowRight className="w-4 h-4" />
+            </button>
+        </div>
+    </div>
+
+    <!-- Grid de certificaciones -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Certificación 1 -->
+        <div class="bg-gray-50 rounded-xl p-6 hover:shadow-md transition-all duration-300 border border-gray-200">
+            <div class="mb-4">
+                <span class="inline-block bg-blue-100 text-[#4115df] px-3 py-1 rounded-full text-xs font-medium mb-2">
+                    GITSe
+                </span>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                    Cuestionario sobre cabinas ergonómicas y de procesos
+                </h3>
+            </div>
+            <button class="w-full bg-[#4115df] text-white py-3 rounded-lg font-medium hover:bg-violet-700 transition-colors duration-200 text-sm">
+                Realizar certificación
+            </button>
+        </div>
+
+        <!-- Certificación 2 -->
+        <div class="bg-gray-50 rounded-xl p-6 hover:shadow-md transition-all duration-300 border border-gray-200">
+            <div class="mb-4">
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                    Cuestionario sobre análisis, probabilidad y estadística de datos
+                </h3>
+            </div>
+            <button class="w-full bg-[#4115df] text-white py-3 rounded-lg font-medium hover:bg-violet-700 transition-colors duration-200 text-sm">
+                Realizar certificación
+            </button>
+        </div>
+
+        <!-- Certificación 3 -->
+        <div class="bg-gray-50 rounded-xl p-6 hover:shadow-md transition-all duration-300 border border-gray-200">
+            <div class="mb-4">
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                    Cuestionario sobre cómputo en la nube y cadenas de bloques
+                </h3>
+            </div>
+            <button class="w-full bg-[#4115df] text-white py-3 rounded-lg font-medium hover:bg-violet-700 transition-colors duration-200 text-sm">
+                Realizar certificación
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer con logo INSTRUCTIVA -->
+    <div class="mt-8 pt-6 border-t border-gray-200">
+        <div class="flex justify-center">
+            <span class="text-2xl font-bold text-[#4115df]">INSTRUCTIVA</span>
+        </div>
+    </div>
+</section>
