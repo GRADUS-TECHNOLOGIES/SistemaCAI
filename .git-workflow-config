@@ -1,0 +1,9 @@
+# Configuración de ramas
+RAMA_PRINCIPAL="main"
+RAMA_DESARROLLO="develop"
+RAMA_TESTEO="testing"
+RAMAS_FEATURE=("feature/jorge" "feature/zavaleta")
+
+# Comandos de test (personalizar según tu proyecto)
+COMANDO_TESTEO="npm run dev"
+COMANDO_CONSTRUCCION="npm run build"
