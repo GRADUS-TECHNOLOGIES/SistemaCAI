@@ -32,11 +32,20 @@ fi
 # ===========================
 # COLORES
 # ===========================
-VERDE="\033[0;32m"
-ROJO="\033[0;31m"
+BLANCO="\033[1;37m"
+VERDE="\033[1;32m"
+ROJO="\033[1;31m"
 AMARILLO="\033[1;33m"
-AZUL="\033[0;34m"
+AZUL="\033[1;34m"
+CYAN="\033[1;36m"
+MORADO="\033[1;35m" 
 SC="\033[0m"
+
+# ===========================
+# ESTILOS DE TEXTO
+# ===========================
+FONDO_NEGRO="\033[40m"
+BLANCO_SUBRAYADO="\033[4;37m"
 
 # ===========================
 # RUTAS
@@ -211,18 +220,18 @@ case "$1" in
         actualizar_rama_base "$RAMA_TESTEO"
         ;;
     *)
-        echo -e "${VERDE}🤖 GIT WORKFLOW MANAGER${SC}"
-        echo "COMANDOS DISPONIBLES:"
-        echo "  status          - Muestra el estado de las ramas"
-        echo "  test            - Ejecuta tests en feature"
-        echo "  push            - Push de feature"
-        echo "  merge-testing   - Merge a testing"
-        echo "  workflow        - Workflow completo"
-        echo "  update-all      - Actualiza todas las ramas base"
+        echo -e "${MORADO}      #####${AMARILLO}   #####${CYAN}   #####${VERDE}   #####${ROJO}   #####   ${SC}${FONDO_NEGRO} 🤖 GIT WORKFLOW MANAGER 🤖 ${SC}"
+        echo -e "${MORADO}     ##  ##${AMARILLO}  ##  ##${CYAN}  ##  ##${VERDE}  ##  ##${ROJO}  ##  ##   ${SC}"
+        echo -e "${MORADO}    ##  ##${AMARILLO}  ##  ##${CYAN}  ##  ##${VERDE}  ##  ##${ROJO}  ##  ##   ${BLANCO} COMANDOS DISPONIBLES:${SC}"
+        echo -e "${MORADO}   ##  ##${AMARILLO}  ##  ##${CYAN}  ##  ##${VERDE}  ##  ##${ROJO}  ##  ##       ${BLANCO}status${SC} (Muestra el estado de las ramas)"
+        echo -e "${MORADO}  ##  ##${AMARILLO}  ##  ##${CYAN}  ##  ##${VERDE}  ##  ##${ROJO}  ##  ##        ${BLANCO}test${SC} (Ejecuta tests en feature)"
+        echo -e "${MORADO} ##  ##${AMARILLO}  ##  ##${CYAN}  ##  ##${VERDE}  ##  ##${ROJO}  ##  ##         ${BLANCO}merge-testing${SC} (Merge a testing)"
+        echo -e "${MORADO}##  ##${AMARILLO}  ##  ##${CYAN}  ##  ##${VERDE}  ##  ##${ROJO}  ##  ##          ${BLANCO}workflow${SC} (Workflow completo)"
+        echo -e "${MORADO}####${AMARILLO}    ####${CYAN}    ####${VERDE}    ####${ROJO}    ####            ${BLANCO}update-all${SC} (Actualiza todas las ramas base)"
         echo ""
-        echo "Ejemplos:"
-        echo "  git-flow workflow feature/jorge"
-        echo "  git-flow test feature/zavaleta"
-        echo "  git-flow merge-testing"
+        echo -e "${AZUL}Ejemplos:${SC}"
+        echo -e "  ${BLANCO_SUBRAYADO}git-flow workflow feature/jorge${SC}"
+        echo -e "  ${BLANCO_SUBRAYADO}git-flow test feature/zavaleta${SC}"
+        echo -e "  ${BLANCO_SUBRAYADO}git-flow merge-testing${SC}"
         ;;
 esac
