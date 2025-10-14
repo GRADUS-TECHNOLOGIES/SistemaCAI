@@ -1,0 +1,24 @@
+---
+// Errors.astro
+const { icon, title, message } = Astro.props;
+---
+
+<main class="bg-white text-black min-h-screen flex flex-col items-center justify-center">
+    <!-- Contenido principal -->
+    <div class="text-center space-y-6">
+        <!-- Icono -->
+        <img
+            src={icon}
+            alt={`${title} icon`}
+            class="w-50 h-50 mx-auto"
+        />
+
+        <!-- Título -->
+        <h1 class="text-5xl sm:text-7xl font-bold">{title}</h1>
+
+        <!-- Mensaje -->
+        <p class="text-gray-400 text-lg sm:text-xl max-w-md">
+            {message}
+        </p>
+    </div>
+</main>

@@ -1,74 +1,165 @@
 ---
-//* IMPORTS
 import { ChevronRight, ArrowRight } from "lucide-react";
+
+// Datos simulados
+const roles = [
+    {
+        img: "./assets/backgrounds/B4.svg",
+        title: "Cuestionario sobre cabinas ergonómicas y de procesos",
+        description:
+            "Evalúa conocimientos sobre ergonomía, ventilación y procesos industriales.",
+    },
+    {
+        img: "./assets/backgrounds/B5.svg",
+        title: "Cuestionario sobre análisis, probabilidad y estadística de datos",
+        description:
+            "Pon a prueba tus habilidades de análisis y razonamiento matemático.",
+    },
+    {
+        img: "./assets/backgrounds/B6.svg",
+        title: "Cuestionario sobre cómputo en la nube y cadenas de bloques",
+        description:
+            "Conoce los fundamentos del almacenamiento distribuido y seguridad digital.",
+    },
+    {
+        img: "./assets/backgrounds/B7.svg",
+        title: "Cuestionario sobre electrónica aplicada y microcontroladores",
+        description:
+            "Explora conceptos de circuitos, sensores y sistemas embebidos.",
+    },
+    {
+        img: "./assets/backgrounds/B8.svg",
+        title: "Cuestionario sobre diseño asistido por computadora (CAD)",
+        description:
+            "Demuestra tus conocimientos en modelado 3D y dibujo técnico.",
+    },
+    {
+        img: "./assets/backgrounds/B9.svg",
+        title: "Cuestionario sobre automatización y control industrial",
+        description:
+            "Evalúa tu dominio de PLCs, instrumentación y procesos automatizados.",
+    },
+];
 ---
 
-<section class="w-full mt-12 bg-white rounded-2xl p-6 sm:p-8">
-    <!-- Header -->
-    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
-        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">
-            Los más populares
-        </h2>
-        
-        <!-- Botones de navegación -->
-        <div class="flex items-center gap-4 w-full sm:w-auto">
-            <button class="flex items-center gap-1 text-[#4115df] font-medium hover:text-violet-700 transition-colors text-sm sm:text-base">
-                Mostrar más
-                <ChevronRight className="w-4 h-4" />
-            </button>
-            <button class="flex items-center gap-1 text-[#4115df] font-medium hover:text-violet-700 transition-colors text-sm sm:text-base">
-                Ver todo
-                <ArrowRight className="w-4 h-4" />
-            </button>
+<section class="w-full mt-12 bg-white rounded-2xl overflow-hidden">
+    <!-- Encabezado -->
+    <p class="text-lg mb-2 text-gray-700">
+        Instructivos y evaluaciones especializadas más populares
+    </p>
+    <h2 class="text-5xl sm:text-6xl lg:text-7xl font-bold mb-10">
+        Lo más popular
+    </h2>
+
+    <!-- Carrusel -->
+    <div class="relative">
+        <div
+            id="carouselContainer"
+            class="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-6 hide-scrollbar"
+        >
+            {
+                roles.map((r) => (
+                    <div
+                        class="min-w-[320px] sm:min-w-[360px] md:min-w-[380px] h-[400px] flex-shrink-0 bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-200 snap-center flex flex-col"
+                    >
+                        <img
+                            src={r.img}
+                            alt={r.title}
+                            class="w-full h-48 object-cover"
+                        />
+                        <div class="p-5 flex flex-col justify-between flex-grow">
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2 line-clamp-2">
+                                    {r.title}
+                                </h3>
+                                <p class="text-sm text-gray-600 line-clamp-3">
+                                    {r.description}
+                                </p>
+                            </div>
+                            <button class="mt-4 w-full bg-[#1f497d] text-white py-3 rounded-lg font-medium hover:bg-[#cc9900] transition-colors duration-200 text-sm">
+                                <a href="/error">Realizar certificación</a>
+                            </button>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+
+        <!-- Botones inferiores -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-start items-start sm:items-center mt-8">
+            <a
+                class="flex items-center gap-2 bg-[#1f497d] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#cc9900] transition-all duration-200 w-full sm:w-auto justify-center sm:justify-start"
+                href="/construccion"
+            >
+                Mostrar más <ArrowRight className="w-5 h-5" />
+            </a>
+            <a
+                class="flex items-center gap-2 border border-[#1f497d] text-[#1f497d] px-6 py-3 rounded-lg font-semibold hover:bg-[#f3e8ff] transition-all duration-200 w-full sm:w-auto justify-center sm:justify-start"
+                href="/construccion"
+            >
+                Ver todo <ChevronRight className="w-5 h-5" />
+            </a>
         </div>
     </div>
 
-    <!-- Grid de certificaciones -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Certificación 1 -->
-        <div class="bg-gray-50 rounded-xl p-6 hover:shadow-md transition-all duration-300 border border-gray-200">
-            <div class="mb-4">
-                <span class="inline-block bg-blue-100 text-[#4115df] px-3 py-1 rounded-full text-xs font-medium mb-2">
-                    GITSe
-                </span>
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                    Cuestionario sobre cabinas ergonómicas y de procesos
-                </h3>
-            </div>
-            <button class="w-full bg-[#4115df] text-white py-3 rounded-lg font-medium hover:bg-violet-700 transition-colors duration-200 text-sm">
-                Realizar certificación
-            </button>
-        </div>
-
-        <!-- Certificación 2 -->
-        <div class="bg-gray-50 rounded-xl p-6 hover:shadow-md transition-all duration-300 border border-gray-200">
-            <div class="mb-4">
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                    Cuestionario sobre análisis, probabilidad y estadística de datos
-                </h3>
-            </div>
-            <button class="w-full bg-[#4115df] text-white py-3 rounded-lg font-medium hover:bg-violet-700 transition-colors duration-200 text-sm">
-                Realizar certificación
-            </button>
-        </div>
-
-        <!-- Certificación 3 -->
-        <div class="bg-gray-50 rounded-xl p-6 hover:shadow-md transition-all duration-300 border border-gray-200">
-            <div class="mb-4">
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                    Cuestionario sobre cómputo en la nube y cadenas de bloques
-                </h3>
-            </div>
-            <button class="w-full bg-[#4115df] text-white py-3 rounded-lg font-medium hover:bg-violet-700 transition-colors duration-200 text-sm">
-                Realizar certificación
-            </button>
-        </div>
-    </div>
-
-    <!-- Footer con logo INSTRUCTIVA -->
-    <div class="mt-8 pt-6 border-t border-gray-200">
-        <div class="flex justify-center">
-            <span class="text-2xl font-bold text-[#4115df]">INSTRUCTIVA</span>
+    <!-- Logo INSTRUCTIVA -->
+    <div
+        class="mt-12 rounded-2xl overflow-hidden relative h-40 md:h-70 bg-cover bg-center flex items-center justify-center"
+        style="background-image: url('./assets/backgrounds/B10.svg');"
+    >
+        <div class="absolute inset-0 bg-black/40"></div>
+        <div class="relative z-10 flex flex-col items-center justify-center text-white">
+            <img
+                src="./assets/logos/L0.svg"
+                alt="Instructiva Logo"
+                class="h-20 md:h-50"
+            />
         </div>
     </div>
 </section>
+
+<style>
+    /* Ocultar scrollbar del carrusel */
+    .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+</style>
+
+<!-- Script del carrusel automático -->
+<script>
+    const carousel = document.getElementById("carouselContainer");
+    if (carousel) {
+        let currentScroll = 0;
+        const scrollAmount = 380;
+        let autoScroll;
+
+        const startAutoScroll = () => {
+            autoScroll = setInterval(() => {
+                if (
+                    carousel.scrollLeft + carousel.offsetWidth >=
+                    carousel.scrollWidth
+                ) {
+                    carousel.scrollTo({ left: 0, behavior: "smooth" });
+                    currentScroll = 0;
+                } else {
+                    currentScroll += scrollAmount;
+                    carousel.scrollTo({
+                        left: currentScroll,
+                        behavior: "smooth",
+                    });
+                }
+            }, 5000);
+        };
+
+        carousel.addEventListener("mouseenter", () => clearInterval(autoScroll));
+        carousel.addEventListener("mouseleave", startAutoScroll);
+        carousel.addEventListener("touchstart", () => clearInterval(autoScroll));
+        carousel.addEventListener("touchend", startAutoScroll);
+
+        startAutoScroll();
+    }
+</script>

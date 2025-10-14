@@ -8,42 +8,46 @@ import { BookOpen, Lightbulb, GraduationCap, Star } from "lucide-react";
     <!-- Título -->
     <div class="text-center lg:text-left flex-shrink-0">
         <h2 class="font-semibold text-xl sm:text-2xl lg:text-2xl leading-tight">
-            ¿Qué te trae a <span class="text-[#4115df] font-bold">Instructiva</span> hoy?
+            ¿Qué te trae a <span class="text-[#cc9900] font-bold">Instructiva</span> hoy?
         </h2>
     </div>
 
     <!-- Botones -->
     <div class="flex flex-col sm:flex-row flex-wrap justify-center lg:justify-end gap-3 w-full lg:w-auto">
         <!-- Botón principal -->
-        <button
-            class="flex items-center justify-center gap-2 bg-[#4115df] text-white px-4 py-3 sm:py-2 rounded-lg hover:bg-[#010089] transition-all duration-200 w-full sm:w-auto min-w-[200px] sm:min-w-0 flex-1 sm:flex-none"
+        <a
+            class="flex items-center justify-center gap-2 bg-[#1f497d] text-white px-4 py-3 sm:py-2 rounded-lg hover:bg-[#cc9900] transition-all duration-200 w-full sm:w-auto min-w-[200px] sm:min-w-0 flex-1 sm:flex-none"
+            href="/error"
         >
-            <BookOpen className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
-            <span class="text-sm sm:text-base whitespace-nowrap">Ver instructivos de GITSE</span>
-        </button>
+                <BookOpen className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
+                <span class="text-sm sm:text-base whitespace-nowrap">Ver instructivos de GITSE</span>
+        </a>
 
         <!-- Botones secundarios -->
         <div class="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
-            <button
-                class="flex items-center justify-center gap-2 border border-[#4115df] text-[#4115df] px-4 py-3 sm:py-2 rounded-lg hover:bg-blue-50 transition-all duration-200 w-full sm:w-auto flex-1"
+            <a
+                class="flex items-center justify-center gap-2 border border-[#1f497d] text-[#1f497d] px-4 py-3 sm:py-2 rounded-lg hover:bg-blue-50 transition-all duration-200 w-full sm:w-auto flex-1"
+                href="/error"
             >
                 <Lightbulb className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
                 <span class="text-sm sm:text-base">Aprender</span>
-            </button>
+            </a>
 
-            <button
-                class="flex items-center justify-center gap-2 border border-[#4115df] text-[#4115df] px-4 py-3 sm:py-2 rounded-lg hover:bg-blue-50 transition-all duration-200 w-full sm:w-auto flex-1"
+            <a
+                class="flex items-center justify-center gap-2 border border-[#1f497d] text-[#1f497d] px-4 py-3 sm:py-2 rounded-lg hover:bg-blue-50 transition-all duration-200 w-full sm:w-auto flex-1"
+                href="/error"
             >
                 <GraduationCap className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
                 <span class="text-sm sm:text-base">Enseñar</span>
-            </button>
+            </a>
 
-            <button
-                class="flex items-center justify-center gap-2 border border-[#4115df] text-[#4115df] px-4 py-3 sm:py-2 rounded-lg hover:bg-blue-50 transition-all duration-200 w-full sm:w-auto flex-1"
+            <a
+                class="flex items-center justify-center gap-2 border border-[#1f497d] text-[#1f497d] px-4 py-3 sm:py-2 rounded-lg hover:bg-blue-50 transition-all duration-200 w-full sm:w-auto flex-1"
+                href="/error"
             >
                 <Star className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
                 <span class="text-sm sm:text-base">Ganar competencias</span>
-            </button>
+            </a>
         </div>
     </div>
 </section>
