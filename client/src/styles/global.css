@@ -26,3 +26,7 @@
         -webkit-text-stroke: 1.5px white;
     }
 }
+
+.input {
+    @apply w-full border border-gray-300 rounded-lg py-3 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-[#3f00ff] transition;
+}
