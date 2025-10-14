@@ -1,0 +1,38 @@
+---
+// [error].astro
+
+//* IMPORT DE LAYOUT
+import Layout from "../layouts/Layout.astro";
+
+//* IMPORT DE NAVBAR Y FOOTER
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+
+//* IMPORT DE COMPONENTES
+import Errors from "../components/Errors.astro"
+
+//* PROPS
+export function getStaticPaths() {
+    return [
+        { params: { error: "error" } },
+        { params: { error: "construccion" } }
+    ];
+}
+
+const { error } = Astro.params as { error: "error" | "construccion" };
+
+//* IMPORT DE DATOS DINAMICOS
+import { errorData } from "../config/error";
+
+// Validación de datos dinámicos
+const data = errorData[error];
+if (!data) {
+    return Astro.redirect("/errors/error");
+}
+---
+
+<Layout title={`Instructiva | ${data.title}`}>
+    <Navbar />
+    <Errors {...data}/>
+    <Footer />
+</Layout>

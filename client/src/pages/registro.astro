@@ -1,0 +1,266 @@
+---
+// registro.astro
+import { ArrowRight, Building2, Mail, Eye } from "lucide-react";
+
+//* IMPORT DE LAYOUT
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title="Instructiva | Registro">
+    <Navbar />
+    <section class="min-h-screen flex flex-col justify-between bg-white">
+        <!-- Contenedor principal -->
+        <div class="flex flex-col lg:flex-row flex-grow">
+            <!-- Columna izquierda -->
+            <div
+                class="bg-[#cc9900] text-white flex flex-col justify-center items-center px-6 sm:px-10 lg:px-12 py-12 lg:py-0 lg:w-1/2 min-h-[400px] lg:min-h-screen"
+            >
+                <div class="max-w-md text-center lg:text-left w-full">
+                    <div class="mb-8 lg:mb-12">
+                        <h1
+                            class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4 lg:mb-6"
+                        >
+                            Comienza tu<br />
+                            <span
+                                class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4 lg:mb-6"
+                            >
+                                aprendizaje con
+                            </span>
+                        </h1>
+                        <h2
+                            class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 lg:mb-6 text-transparent stroke-white outline-text"
+                        >
+                            Instructiva
+                        </h2>
+                    </div>
+
+                    <!-- Características destacadas -->
+                    <div class="hidden lg:block space-y-3 text-white/80">
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-white rounded-full"></div>
+                            <span class="text-sm"
+                                >Comunidad educativa activa</span
+                            >
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-white rounded-full"></div>
+                            <span class="text-sm"
+                                >Certificaciones reconocidas</span
+                            >
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-white rounded-full"></div>
+                            <span class="text-sm">Contenido especializado</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Columna derecha -->
+            <div
+                class="flex flex-col justify-center items-center lg:w-1/2 px-6 sm:px-8 lg:px-12 py-8 lg:py-0 bg-gray-50 lg:bg-white"
+            >
+                <div
+                    class="w-full max-w-md bg-white lg:bg-transparent rounded-2xl lg:rounded-none p-6 sm:p-8 lg:p-0 shadow-lg lg:shadow-none"
+                >
+                    <!-- Tabs de registro / login -->
+                    <div class="flex border-b border-gray-200 mb-8">
+                        <button
+                            class="pb-3 text-lg font-semibold border-b-2 border-[#1f497d] text-[#1f497d] transition-colors duration-200"
+                        >
+                            Registro
+                        </button>
+                        <button
+                            class="pb-3 ml-6 text-lg text-gray-500 hover:text-[#1f497d] transition-colors duration-200"
+                        >
+                            <a href="/iniciar-sesion">Iniciar sesión</a>
+                        </button>
+                    </div>
+
+                    <!-- Formulario de registro -->
+                    <form class="space-y-5">
+                        <!-- Grid responsivo para nombres -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <input
+                                    type="text"
+                                    placeholder="Nombre"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#cc9900] focus:border-transparent transition-all duration-200 bg-white focus:shadow-[0_0_0_3px_rgba(63,0,255,0.1)]"
+                                    required
+                                />
+                            </div>
+                            <div>
+                                <input
+                                    type="text"
+                                    placeholder="Apellido"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#cc9900] focus:border-transparent transition-all duration-200 bg-white focus:shadow-[0_0_0_3px_rgba(63,0,255,0.1)]"
+                                    required
+                                />
+                            </div>
+                        </div>
+
+                        <input
+                            type="email"
+                            placeholder="Correo electrónico"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#cc9900] focus:border-transparent transition-all duration-200 bg-white focus:shadow-[0_0_0_3px_rgba(63,0,255,0.1)]"
+                            required
+                        />
+
+                        <!-- Campo de contraseña con toggle -->
+                        <div class="relative">
+                            <input
+                                type="password"
+                                placeholder="Contraseña"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#cc9900] focus:border-transparent transition-all duration-200 bg-white focus:shadow-[0_0_0_3px_rgba(63,0,255,0.1)] pr-10"
+                                required
+                                minlength="8"
+                            />
+                            <button
+                                type="button"
+                                class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors duration-200"
+                            >
+                                <Eye className="w-5 h-5" />
+                            </button>
+                        </div>
+
+                        <input
+                            type="text"
+                            placeholder="Usuario"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#cc9900] focus:border-transparent transition-all duration-200 bg-white focus:shadow-[0_0_0_3px_rgba(63,0,255,0.1)]"
+                            required
+                        />
+
+                        <div class="relative">
+                            <select
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#cc9900] focus:border-transparent transition-all duration-200 bg-white focus:shadow-[0_0_0_3px_rgba(63,0,255,0.1)] appearance-none cursor-pointer"
+                            >
+                                <option value=""
+                                    >Selecciona tu institución</option
+                                >
+                                <option value="publica"
+                                    >Institución Pública</option
+                                >
+                                <option value="privada"
+                                    >Institución Privada</option
+                                >
+                                <option value="otra">Otra</option>
+                            </select>
+                            <div
+                                class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none"
+                            >
+                                <svg
+                                    class="w-4 h-4 text-gray-400"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Términos y condiciones -->
+                        <div class="flex items-start gap-3">
+                            <input
+                                type="checkbox"
+                                id="terms"
+                                class="mt-1 w-4 h-4 text-[#1f497d] border-gray-300 rounded focus:ring-[#cc9900] focus:ring-2 focus:ring-offset-1"
+                                required
+                            />
+                            <label
+                                for="terms"
+                                class="text-sm text-gray-600 leading-relaxed"
+                            >
+                                Acepto los{" "}
+                                <a
+                                    href="#"
+                                    class="text-[#cc9900] hover:underline font-medium"
+                                >
+                                    términos y condiciones
+                                </a>{" "}
+                                y el{" "}
+                                <a
+                                    href="#"
+                                    class="text-[#cc9900] hover:underline font-medium"
+                                >
+                                    manejo de información
+                                </a>{" "}
+                                de GITS S.A de C.V.
+                            </label>
+                        </div>
+
+                        <button
+                            type="submit"
+                            class="w-full bg-[#1f497d] hover:bg-[#cc9900] text-white py-3.5 rounded-lg font-semibold flex justify-center items-center gap-2 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                        >
+                            Crear cuenta <ArrowRight className="w-4 h-4" />
+                        </button>
+                    </form>
+
+                    <!-- Separador -->
+                    <div class="relative flex items-center my-8">
+                        <div class="flex-grow border-t border-gray-200"></div>
+                        <span class="flex-shrink mx-4 text-sm text-gray-500"
+                            >O continuar con</span
+                        >
+                        <div class="flex-grow border-t border-gray-200"></div>
+                    </div>
+
+                    <!-- Otras opciones de registro -->
+                    <div class="space-y-3">
+                        <button
+                            type="button"
+                            class="w-full flex items-center justify-center gap-3 bg-white border border-gray-300 hover:border-gray-400 hover:bg-gray-50 px-4 py-3 rounded-lg font-medium transition-all duration-200 shadow-sm hover:shadow"
+                        >
+                            <Mail className="w-5 h-5 text-red-500" />
+                            <span>Google</span>
+                        </button>
+                        <button
+                            type="button"
+                            class="w-full flex items-center justify-center gap-3 bg-white border border-gray-300 hover:border-gray-400 hover:bg-gray-50 px-4 py-3 rounded-lg font-medium transition-all duration-200 shadow-sm hover:shadow"
+                        >
+                            <Building2 className="w-5 h-5 text-blue-500" />
+                            <span>Correo institucional</span>
+                        </button>
+                    </div>
+
+                    <!-- Enlace a login -->
+                    <div class="text-center mt-8">
+                        <p class="text-sm text-gray-600">
+                            ¿Ya tienes una cuenta?{" "}
+                            <a
+                                href="/iniciar-sesion"
+                                class="text-[#cc9900] hover:underline font-semibold"
+                            >
+                                Inicia sesión aquí
+                            </a>
+                        </p>
+                    </div>
+
+                    <!-- Información adicional -->
+                    <div
+                        class="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200"
+                    >
+                        <p class="text-xs text-blue-700 text-center">
+                            <strong>¿Necesitas ayuda?</strong><br />
+                            Contacta al soporte en
+                            <a
+                                href="mailto:soporte@instructiva.com"
+                                class="underline ml-1"
+                                >soporte@instructiva.com</a
+                            >
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <Footer />
+</Layout>
