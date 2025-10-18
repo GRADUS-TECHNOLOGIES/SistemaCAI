@@ -1,199 +1,327 @@
 ---
-// login.astro
-import { ArrowRight, Building2, Mail, Eye, EyeOff } from "lucide-react";
-
+import { ArrowRight, Building2, Mail, Eye } from "lucide-react";
 //* IMPORT DE LAYOUT
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 ---
+
 <Layout title="Instructiva | Iniciar Sesión">
-    <Navbar />
-    <section class="min-h-screen flex flex-col justify-between bg-white">
-        <!-- Contenedor principal -->
-        <div class="flex flex-col lg:flex-row flex-grow">
-            <!-- Columna izquierda -->
-            <div
-                class="bg-[#1f497d] text-white flex flex-col justify-center items-center px-6 sm:px-10 lg:px-12 py-12 lg:py-0 lg:w-1/2 min-h-[400px] lg:min-h-screen"
-            >
-                <div class="max-w-md text-center lg:text-left w-full">
-                    <div class="mb-8 lg:mb-12">
-                        <h1
-                            class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4 lg:mb-6"
-                        >
-                            Bienvenid@<br />
-                            <span
-                                class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4 lg:mb-6"
-                            >
-                                de vuelta a
-                            </span>
-                        </h1>
-                        <h2
-                            class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 lg:mb-6 text-transparent stroke-white outline-text"
-                        >
-                            Instructiva
-                        </h2>
-                    </div>
+	<Navbar />
+	<section class="min-h-screen flex flex-col justify-between bg-white">
+		<!-- Contenedor principal -->
+		<div class="flex flex-col lg:flex-row flex-grow">
+			<!-- Columna izquierda -->
+			<div
+				class="bg-[#1f497d] text-white flex flex-col justify-center items-center px-6 sm:px-10 lg:px-12 py-12 lg:py-0 lg:w-1/2 min-h-[400px] lg:min-h-screen"
+			>
+				<div class="max-w-md text-center lg:text-left w-full">
+					<div class="mb-8 lg:mb-12">
+						<h1
+							class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4 lg:mb-6"
+						>
+							Bienvenid@<br />
+							<span
+								class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4 lg:mb-6"
+							>
+								de vuelta a
+							</span>
+						</h1>
+						<h2
+							class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 lg:mb-6 text-transparent stroke-white outline-text"
+						>
+							Instructiva
+						</h2>
+					</div>
 
-                    <!-- Características destacadas -->
-                    <div class="hidden lg:block space-y-3">
-                        <div class="flex items-center gap-3">
-                            <div class="w-2 h-2 bg-white rounded-full"></div>
-                            <span class="text-sm"
-                                >Accede a tus cursos y certificaciones</span
-                            >
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <div class="w-2 h-2 bg-white rounded-full"></div>
-                            <span class="text-sm"
-                                >Continúa tu progreso de aprendizaje</span
-                            >
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <div class="w-2 h-2 bg-white rounded-full"></div>
-                            <span class="text-sm"
-                                >Conecta con la comunidad educativa</span
-                            >
-                        </div>
-                    </div>
-                </div>
-            </div>
+					<!-- Características destacadas -->
+					<div class="hidden lg:block space-y-3">
+						<div class="flex items-center gap-3">
+							<div class="w-2 h-2 bg-white rounded-full"></div>
+							<span class="text-sm">Accede a tus cursos y certificaciones</span>
+						</div>
+						<div class="flex items-center gap-3">
+							<div class="w-2 h-2 bg-white rounded-full"></div>
+							<span class="text-sm">Continúa tu progreso de aprendizaje</span>
+						</div>
+						<div class="flex items-center gap-3">
+							<div class="w-2 h-2 bg-white rounded-full"></div>
+							<span class="text-sm">Conecta con la comunidad educativa</span>
+						</div>
+					</div>
+				</div>
+			</div>
 
-            <!-- Columna derecha -->
-            <div
-                class="flex flex-col justify-center items-center lg:w-1/2 px-6 sm:px-8 lg:px-12 py-8 lg:py-0 bg-gray-50 lg:bg-white"
-            >
-                <div
-                    class="w-full max-w-md bg-white lg:bg-transparent rounded-2xl lg:rounded-none p-6 sm:p-8 lg:p-0 shadow-lg lg:shadow-none"
-                >
-                    <!-- Tabs de login / registro -->
-                    <div class="flex border-b border-gray-200 mb-8">
-                        <button
-                            class="pb-3 text-lg font-semibold border-b-2 border-[#1f497d] text-[#1f497d] transition-colors duration-200"
-                        >
-                            Iniciar sesión
-                        </button>
-                        <button
-                            class="pb-3 ml-6 text-lg text-gray-500 hover:text-[#1f497d] transition-colors duration-200"
-                        >
-                            <a href="/registro">Registro</a>
-                        </button>
-                    </div>
+			<!-- Columna derecha -->
+			<div
+				class="flex flex-col justify-center items-center lg:w-1/2 px-6 sm:px-8 lg:px-12 py-8 lg:py-0 bg-gray-50 lg:bg-white"
+			>
+				<div
+					class="w-full max-w-md bg-white lg:bg-transparent rounded-2xl lg:rounded-none p-6 sm:p-8 lg:p-0 shadow-lg lg:shadow-none"
+				>
+					<!-- Tabs de login / registro -->
+					<div class="flex border-b border-gray-200 mb-8">
+						<button
+							class="pb-3 text-lg font-semibold border-b-2 border-[#1f497d] text-[#1f497d] transition-colors duration-200"
+						>
+							Iniciar sesión
+						</button>
+						<button
+							class="pb-3 ml-6 text-lg text-gray-500 hover:text-[#1f497d] transition-colors duration-200"
+						>
+							<a href="/registro">Registro</a>
+						</button>
+					</div>
 
-                    <!-- Formulario de login -->
-                    <form class="space-y-5">
-                        <input
-                            type="text"
-                            placeholder="Usuario o correo electrónico"
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#cc9900] focus:border-transparent transition-all duration-200 bg-white focus:shadow-[0_0_0_3px_rgba(63,0,255,0.1)]"
-                            required
-                        />
+					<!-- Formulario de login -->
+					<form id="loginForm" class="space-y-5">
+						<input
+							type="text"
+							id="email"
+							placeholder="Usuario o correo electrónico"
+							class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#cc9900] focus:border-transparent transition-all duration-200 bg-white focus:shadow-[0_0_0_3px_rgba(63,0,255,0.1)]"
+							required
+						/>
 
-                        <!-- Campo de contraseña con toggle -->
-                        <div class="relative">
-                            <input
-                                type="password"
-                                placeholder="Contraseña"
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#cc9900] focus:border-transparent transition-all duration-200 bg-white focus:shadow-[0_0_0_3px_rgba(63,0,255,0.1)] pr-10"
-                                required
-                            />
-                            <button
-                                type="button"
-                                class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors duration-200"
-                            >
-                                <Eye className="w-5 h-5" />
-                            </button>
-                        </div>
+						<!-- Campo de contraseña con toggle (SOLO UNO) -->
+						<div class="relative">
+							<input
+								type="password"
+								id="password"
+								placeholder="Contraseña"
+								class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#cc9900] focus:border-transparent transition-all duration-200 bg-white focus:shadow-[0_0_0_3px_rgba(63,0,255,0.1)] pr-10"
+								required
+							/>
+							<button
+								type="button"
+								id="togglePassword"
+								class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors duration-200"
+							>
+								<Eye id="eyeIcon" className="w-5 h-5" />
+							</button>
+						</div>
 
-                        <!-- Recordar contraseña y olvidé contraseña -->
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center gap-2">
-                                <input
-                                    type="checkbox"
-                                    id="remember"
-                                    class="w-4 h-4 text-[#1f497d] border-gray-300 rounded focus:ring-[#cc9900] focus:ring-2 focus:ring-offset-1"
-                                />
-                                <label
-                                    for="remember"
-                                    class="text-sm text-gray-600"
-                                >
-                                    Recordar sesión
-                                </label>
-                            </div>
-                            <a
-                                href="/construccion"
-                                class="text-sm text-[#1f497d] hover:underline font-medium"
-                            >
-                                ¿Olvidaste tu contraseña?
-                            </a>
-                        </div>
+						<!-- Recordar contraseña y olvidé contraseña -->
+						<div class="flex items-center justify-between">
+							<div class="flex items-center gap-2">
+								<input
+									type="checkbox"
+									id="remember"
+									class="w-4 h-4 text-[#1f497d] border-gray-300 rounded focus:ring-[#cc9900] focus:ring-2 focus:ring-offset-1"
+								/>
+								<label for="remember" class="text-sm text-gray-600">
+									Recordar sesión
+								</label>
+							</div>
+							<a
+								href="/construccion"
+								class="text-sm text-[#1f497d] hover:underline font-medium"
+							>
+								¿Olvidaste tu contraseña?
+							</a>
+						</div>
 
-                        <button
-                            type="submit"
-                            class="w-full bg-[#1f497d] hover:bg-[#cc9900] text-white py-3.5 rounded-lg font-semibold flex justify-center items-center gap-2 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
-                        >
-                            Iniciar sesión <ArrowRight className="w-4 h-4" />
-                        </button>
-                    </form>
+						<button
+							type="submit"
+							class="w-full bg-[#1f497d] hover:bg-[#cc9900] text-white py-3.5 rounded-lg font-semibold flex justify-center items-center gap-2 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+						>
+							Iniciar sesión <ArrowRight className="w-4 h-4" />
+						</button>
+					</form>
 
-                    <!-- Separador -->
-                    <div class="relative flex items-center my-8">
-                        <div class="flex-grow border-t border-gray-200"></div>
-                        <span class="flex-shrink mx-4 text-sm text-gray-500"
-                            >O continuar con</span
-                        >
-                        <div class="flex-grow border-t border-gray-200"></div>
-                    </div>
+					<!-- Mensaje de error -->
+					<div
+						id="errorMessage"
+						class="hidden mt-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded-lg text-sm"
+					>
+					</div>
 
-                    <!-- Otras opciones de login -->
-                    <div class="space-y-3">
-                        <button
-                            type="button"
-                            class="w-full flex items-center justify-center gap-3 bg-white border border-gray-300 hover:border-gray-400 hover:bg-gray-50 px-4 py-3 rounded-lg font-medium transition-all duration-200 shadow-sm hover:shadow"
-                        >
-                            <Mail className="w-5 h-5 text-red-500" />
-                            <span>Google</span>
-                        </button>
-                        <button
-                            type="button"
-                            class="w-full flex items-center justify-center gap-3 bg-white border border-gray-300 hover:border-gray-400 hover:bg-gray-50 px-4 py-3 rounded-lg font-medium transition-all duration-200 shadow-sm hover:shadow"
-                        >
-                            <Building2 className="w-5 h-5 text-blue-500" />
-                            <span>Correo institucional</span>
-                        </button>
-                    </div>
+					<!-- Separador -->
+					<div class="relative flex items-center my-8">
+						<div class="flex-grow border-t border-gray-200"></div>
+						<span class="flex-shrink mx-4 text-sm text-gray-500"
+							>O continuar con</span
+						>
+						<div class="flex-grow border-t border-gray-200"></div>
+					</div>
 
-                    <!-- Enlace a registro -->
-                    <div class="text-center mt-8">
-                        <p class="text-sm text-gray-600">
-                            ¿No tienes una cuenta?{" "}
-                            <a
-                                href="/registro"
-                                class="text-[#cc9900] hover:underline font-semibold"
-                            >
-                                Regístrate aquí
-                            </a>
-                        </p>
-                    </div>
+					<!-- Otras opciones de login -->
+					<div class="space-y-3">
+						<button
+							type="button"
+							class="w-full flex items-center justify-center gap-3 bg-white border border-gray-300 hover:border-gray-400 hover:bg-gray-50 px-4 py-3 rounded-lg font-medium transition-all duration-200 shadow-sm hover:shadow"
+						>
+							<Mail className="w-5 h-5 text-red-500" />
+							<span>Google</span>
+						</button>
+						<button
+							type="button"
+							class="w-full flex items-center justify-center gap-3 bg-white border border-gray-300 hover:border-gray-400 hover:bg-gray-50 px-4 py-3 rounded-lg font-medium transition-all duration-200 shadow-sm hover:shadow"
+						>
+							<Building2 className="w-5 h-5 text-blue-500" />
+							<span>Correo institucional</span>
+						</button>
+					</div>
 
-                    <!-- Información adicional -->
-                    <div
-                        class="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200"
-                    >
-                        <p class="text-xs text-blue-700 text-center">
-                            <strong>¿Problemas para acceder?</strong><br />
-                            Contacta al soporte técnico en
-                            <a
-                                href="mailto:soporte@instructiva.com"
-                                class="underline ml-1"
-                                >soporte@instructiva.com</a
-                            >
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+					<!-- Enlace a registro -->
+					<div class="text-center mt-8">
+						<p class="text-sm text-gray-600">
+							¿No tienes una cuenta?{" "}
+							<a
+								href="/registro"
+								class="text-[#cc9900] hover:underline font-semibold"
+							>
+								Regístrate aquí
+							</a>
+						</p>
+					</div>
 
-    <Footer />
+					<!-- Información adicional -->
+					<div class="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
+						<p class="text-xs text-blue-700 text-center">
+							<strong>¿Problemas para acceder?</strong><br />
+							Contacta al soporte técnico en
+							<a href="mailto:soporte@instructiva.com" class="underline ml-1"
+								>soporte@instructiva.com</a
+							>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<Footer />
+
+	<script>
+		// Usuarios definidos directamente en el script
+		//No funciona si lo importas. Buscar solucion
+		const usersInstructiva = [
+			{
+				email: "admin@instructiva.com",
+				password: "admin123",
+				role: "admin",
+				username: "Administrador",
+				welcomeTitle: "Panel de Administración",
+				welcomeMessage: "Bienvenido Roberto",
+			},
+			{
+				email: "profesor@instructiva.com",
+				password: "profesor123",
+				role: "profesor",
+				username: "Werner Karl Heisenberg",
+				welcomeTitle: `Bienvenido Profesor`,
+				welcomeMessage: "Gestiona tus cursos y estudiantes",
+			},
+			{
+				email: "estudiante@instructiva.com",
+				password: "estudiante123",
+				role: "estudiante",
+				username: "Jorge Eduardo  Peña Paz",
+				welcomeTitle: "¡Bienvenido Estudiante!",
+				welcomeMessage: "Continúa tu aprendizaje",
+			},
+			{
+				email: "pepinillo@pepinillo.com",
+				password: "pepinilloRick123",
+				role: "pepino",
+				username: "Pepinillo",
+				welcomeTitle: "Pepinillo",
+				welcomeMessage: "Me convertí en pepinillo, Morty! ¡Boom! Gran revelación: soy un pepinillo. ¿Qué te parece?",
+			},
+		];
+
+		function togglePassword() {
+			const passwordInput = document.getElementById("password");
+			const eyeIcon = document.getElementById("eyeIcon");
+
+			if (!passwordInput || !eyeIcon) return;
+			// @ts-ignore
+			if (passwordInput.type === "password") {
+				// @ts-ignore
+				passwordInput.type = "text";
+				eyeIcon.innerHTML = `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.878 9.878L6.59 6.59m9.02 9.02l3.83 3.83"/></svg>`;
+			} else {
+				// @ts-ignore
+				passwordInput.type = "password";
+				eyeIcon.innerHTML = `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>`;
+			}
+		}
+
+		document.addEventListener("DOMContentLoaded", function () {
+			// Configurar el toggle de password
+			const toggleBtn = document.getElementById("togglePassword");
+			if (toggleBtn) {
+				toggleBtn.addEventListener("click", togglePassword);
+			}
+
+			const loginForm = document.getElementById("loginForm");
+			const errorMessage = document.getElementById("errorMessage");
+
+			if (loginForm) {
+				loginForm.addEventListener("submit", function (e) {
+					e.preventDefault();
+
+					const emailInput = document.getElementById("email");
+					const passwordInput = document.getElementById("password");
+					const rememberInput = document.getElementById("remember");
+					// @ts-ignore
+					const email = emailInput?.value;
+					// @ts-ignore
+					const password = passwordInput?.value;
+
+					if (!email || !password) {
+						if (errorMessage) {
+							errorMessage.textContent = "Por favor, completa todos los campos";
+							errorMessage.classList.remove("hidden");
+						}
+						return;
+					}
+
+					// Buscar usuario
+					const user = usersInstructiva.find(
+						(u) => u.email === email && u.password === password,
+					);
+					if (user) {
+						localStorage.setItem(
+							"currentUser",
+							JSON.stringify({
+								email: user.email,
+								username: user.username,
+								role: user.role,
+								welcomeTitle: user.welcomeTitle,
+								welcomeMessage: user.welcomeMessage,
+								loggedIn: rememberInput,
+							}),
+						);
+
+						if (errorMessage) {
+							errorMessage.className =
+								"mt-4 p-3 bg-green-100 border border-green-400 text-green-700 rounded-lg text-sm";
+							errorMessage.textContent = "¡Login exitoso! Redirigiendo...";
+							errorMessage.classList.remove("hidden");
+						}
+
+						setTimeout(() => {
+							window.location.href = "/welcome";
+						}, 1000);
+					} else {
+						if (errorMessage) {
+							errorMessage.className =
+								"mt-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded-lg text-sm";
+							errorMessage.textContent =
+								"Credenciales incorrectas. Verifica tu email y contraseña.";
+							errorMessage.classList.remove("hidden");
+						}
+					}
+				});
+			}
+
+			// Redirigir si ya está logueado
+			const currentUser = localStorage.getItem("currentUser");
+			if (currentUser && JSON.parse(currentUser).loggedIn) {
+				window.location.href = "/welcome";
+			}
+		});
+	</script>
 </Layout>
