@@ -3,11 +3,12 @@
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
+import LogoutBtn from "../components/LogoutBtn.astro";
 ---
 
 <Layout title="Bienvenido | Instructiva">
   <Navbar />
-
+  <LogoutBtn />
   <section
     class="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 flex items-center justify-center py-8"
   >
@@ -18,18 +19,6 @@ import Footer from "../components/Footer.astro";
           <div class="h-8 bg-gray-300 rounded w-64 mx-auto mb-4"></div>
           <div class="h-64 bg-gray-300 rounded-lg"></div>
         </div>
-      </div>
-
-      <!-- Botón de cerrar sesión -->
-      <div class="mt-8 text-center">
-        <button
-          id="logoutBtn"
-          class=`fixed top-3 right-6 z-[60] px-6 py-3
-          bg-[#1f497d] hover:bg-[#cc9900] text-white 
-          rounded-lg transition-colors duration-200 font-medium shadow-lg hover:shadow-xl transform translate-y-0`
-        >
-          Cerrar Sesión
-        </button>
       </div>
     </div>
   </section>
@@ -47,8 +36,6 @@ import Footer from "../components/Footer.astro";
 
       const user = JSON.parse(userData);
       const container = document.getElementById("welcomeContent");
-      const logoutBtn = document.getElementById("logoutBtn");
-
       if (!container) return;
 
       // Configuración de imágenes según el rol
@@ -90,14 +77,6 @@ import Footer from "../components/Footer.astro";
 					</div>
 				</div>
 			`;
-
-      // Configurar el botón de cerrar sesion
-      if (logoutBtn) {
-        logoutBtn.addEventListener("click", function () {
-          localStorage.removeItem("currentUser");
-          window.location.href = "/iniciar-sesion";
-        });
-      }
     });
   </script>
 </Layout>
