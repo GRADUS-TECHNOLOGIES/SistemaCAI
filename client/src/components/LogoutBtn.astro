@@ -1,0 +1,21 @@
+<div class="mt-8 text-center">
+  <button
+    id="logoutBtn"
+    class=`fixed top-3 right-6 z-[60] px-6 py-3
+          bg-[#1f497d] hover:bg-[#cc9900] text-white 
+          rounded-lg transition-colors duration-200 font-medium shadow-lg hover:shadow-xl cursor-pointer`
+  >
+    Cerrar Sesión
+  </button>
+</div>
+
+<script>
+  const logoutBtn = document.getElementById("logoutBtn");
+  // Configurar el botón de cerrar sesion
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", function () {
+      localStorage.removeItem("currentUser");
+      window.location.href = "/iniciar-sesion";
+    });
+  }
+</script>
